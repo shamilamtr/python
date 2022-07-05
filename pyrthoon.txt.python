@@ -1,0 +1,71 @@
+# Task 1
+Programming_Languages = {
+    'George': ['Java', 'JavaScript'],
+    'David': ['C#', 'Ruby', 'JavaScript']
+}
+for person, favorite_languages in Programming_Languages.items():
+    for favorite_language in favorite_languages:
+        print('favorite language of student ', person, 'is ', favorite_language)
+print("---------------------------------------------------------------------------")
+
+# Task 2
+Users = ['Andrew', 'Carolina', 'David', 'John', 'Clark', 'Alice']
+Privileged_Users = ['Andrew', 'Carolina', 'David', 'George']
+
+for user in Users:
+    if user in Privileged_Users:
+        print('The user ', user, 'is in Privileged users.')
+
+print("---------------------------------------------------------------------------")
+
+# Task 3
+Sublist_Privileged_Users = []
+for user in Users:
+    if user in Privileged_Users:
+        Sublist_Privileged_Users.append(user)
+print('There are ', len(Sublist_Privileged_Users), ' privileged users.')
+
+print("---------------------------------------------------------------------------")
+
+
+# Task 4
+def theFunc(var1, var2):
+    listOfOddNumbers = []
+    for number in var1:
+        if number % 2 != 0 and number > var2:
+            listOfOddNumbers.append(number)
+    print('Odd numbers in list greater than ', var2, ' are ', listOfOddNumbers)
+
+
+listOfNumbers = [13, 5, 6, 21, 26, 33, 82, 54, 51, 67]
+theFunc(listOfNumbers, 10)
+
+print("---------------------------------------------------------------------------")
+
+
+# Task 5 & Task 6 & Task 7
+class Person:
+    def __init__(self, name, age, country):
+        self.name = name
+        self.age = age
+        self.country = country
+
+    def details(self):
+        return f"{self.name} is {self.age} years old and he/she is from {self.country}"
+
+
+class Student(Person):
+    def __init__(self, name, age, country, university):
+        super().__init__(name, age, country)
+        self.university = university
+
+    def details(self):
+        return f"{self.name} is {self.age} years old and he/she is from {self.country} and is studying in {self.university}"
+
+
+person1 = Person('John Doe', '23', 'Georgia')
+student1 = Student('John Doe', '23', 'Georgia', 'UG')
+print(person1.details())
+print(student1.details())
+
+print("---------------------------------------------------------------------------")
